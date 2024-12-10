@@ -1,4 +1,13 @@
 {
-   "X": "F",
-   "F": "+F[-gF]/2F[\\rF]"
+   "rules": {
+      "X": [
+         "F"
+      ],
+      "F": [
+         "+F[-gF]/2F[\\rF]FF/bF[-gF]nFF"
+      ]
+   },
+   "angle": 90,
+   "length": 4,
+   "lineWidth": 10
 }

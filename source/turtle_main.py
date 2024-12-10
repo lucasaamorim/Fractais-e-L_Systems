@@ -1,5 +1,5 @@
 from turtle import Screen, Turtle
-from generate_string import generate_string, read_archive
+from generate_string_multi import generate_string, read_archive
 
 def create_screen():
     screen = Screen()
@@ -13,20 +13,23 @@ def create_turtle():
     brad.pensize(1)
     brad.left(90)
     
-    string = generate_string(6, read_archive("rules.json"))
+    file = read_archive("rules.json")
+    lineWidthBase, angle = file["lineWidth"], file["angle"]
+    string = generate_string(file["length"], file["rules"])[0]
     
+    lineWidth = lineWidthBase
     stack = []
     for char in string:
         if char == "F":
-            brad.forward(2)
+            brad.forward(lineWidth)
         elif char == "+":
-            brad.right(25)
+            brad.right(angle)  
         elif char == "-":
-            brad.left(25)
+            brad.left(angle)
         elif char == "/":
-            brad.right(45)
+            brad.right(angle/2)
         elif char == "\\":
-            brad.left(45)
+            brad.left(angle/2)
         elif char == "r":
             brad.color("red")
         elif char == "g":
@@ -35,10 +38,14 @@ def create_turtle():
             brad.color("blue")
         elif char == "n":
             brad.color("white")
+        elif char == "1":
+            lineWidth = lineWidthBase
+        elif char == "2":
+            lineWidth = lineWidthBase*2
         elif char == "[":
-            stack.append((brad.heading(), brad.position()))
+            stack.append((brad.heading(), brad.position(), lineWidth))
         elif char == "]":
-            heading, position = stack.pop()
+            heading, position, lineWidth = stack.pop()
             brad.setheading(heading)
             brad.setpos(position)
     
