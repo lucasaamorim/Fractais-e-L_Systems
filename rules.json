@@ -4,10 +4,10 @@
          "F"
       ],
       "F": [
-         "+F[-gF]/2F[\\rF]FF/bF[-gF]nFF"
+         "+F[-gF]/2F"
       ]
    },
    "angle": 90,
-   "length": 4,
+   "length": 3,
    "lineWidth": 10
 }
