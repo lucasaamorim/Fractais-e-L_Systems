@@ -12,33 +12,56 @@ def validate_rules(rules) -> bool:
       if key not in alphabet:
          return False
       else:
-         for char in value:
-            if char not in alphabet:
-               return False
+         for rule in value:
+            for char in rule:
+               if char not in alphabet:
+                  return False
    return True
 
-def generate_string(length, rules) -> str:
+def apply_rules(str, rules) -> list:   
+   newStrings = []
+   
+   for rule in rules:
+      newStrings.append(str + rule)
+   
+   return newStrings
+
+def apply_rules_multi(strs, rules) -> list:
+   newStrings = []
+   
+   for str in strs:
+      newStrings.extend(apply_rules(str, rules))
+   
+   return newStrings
+
+def generate_string(length, rules) -> list:
    if not validate_rules(rules):
       return None
-
-   string = axiom
-
+   
+   strings = [axiom]
+   
    for _ in range(length):
-      newString = ""
-      for char in string:
-         if char in rules:
-            newString += rules[char]
-         else:
-            newString += char
-      string = newString
-
-   return string
+      newStrings = []
+      
+      for string in strings:
+         newForks = ['']
+         
+         for char in string:
+            if char in rules:
+               newForks = apply_rules_multi(newForks, rules[char])
+            else:
+               newForks = [fork + char for fork in newForks]
+         newStrings.extend(newForks)
+      strings = newStrings
+   
+   return strings
 
 if (__name__ == "__main__"):
-   rules = read_archive("rules.json")
-   string = generate_string(2, rules)
+   file = read_archive("rules.json")
+   string = generate_string(file["length"], file["rules"])
    
    if (string == None):
       print("Invalid rules")
    else:
-      print(string)
+      for (i, string) in enumerate(string):
+         print(f"{i}: {string}")
