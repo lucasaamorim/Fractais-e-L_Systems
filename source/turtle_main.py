@@ -1,5 +1,5 @@
 from turtle import Screen, Turtle
-from generate_string_multi import generate_string, read_archive
+from generate_string import generate_string, read_archive
 
 def create_screen():
     screen = Screen()
