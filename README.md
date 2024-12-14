@@ -34,7 +34,7 @@ O arquivo JSON deve conter os seguintes campos:
 
 - **`rules`**: Um dicionário onde cada símbolo tem uma regra de produção associada.
 - **`angle`**: O ângulo de rotação usado na visualização com a biblioteca `turtle`.
-- **`length`**: O comprimento da linha que será desenhada.
+- **`length`**: Profundidade da recursão.
 - **`lineWidth`**: Comprimento da linha.
 ## Como Usar
 
@@ -45,12 +45,12 @@ O arquivo JSON deve conter os seguintes campos:
 
 2. Execute o programa:
    ```bash
-   python main.py caminho/para/arquivo.json profundidade
+   python source/main.py caminho/para/arquivo.json profundidade
    ```
 
 3. Para verificar se uma string pertence a um L-System:
    ```bash
-   python main.py caminho/para/arquivo.json --verificar "sua_string"
+   python source/main.py caminho/para/arquivo.json --verificar "sua_string" profundidade
    ```
 
 ## Exemplos
@@ -66,7 +66,7 @@ Para um arquivo `rules.json` com o seguinte conteúdo:
          "F"
       ],
       "F": [
-         "+F[-gF]/2F"
+         "F+F-F"
       ]
    },
    "angle": 90,
@@ -85,7 +85,7 @@ O programa gerará o desenho do fractal correspondente na janela do `turtle`.
 
 Para verificar se a string `F+F-F` pertence ao L-System descrito em `rules.json`, execute:
 ```bash
-python main.py rules.json --verificar "F+F-F"
+python main.py rules.json --verificar "F+F-F" 2
 ```
 
 O programa retornará:
