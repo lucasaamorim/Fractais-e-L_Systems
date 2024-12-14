@@ -1,0 +1,13 @@
+{
+   "rules": {
+      "X": [
+         "F"
+      ],
+      "F": [
+         "F+F-F-F+F"
+      ]
+   },
+   "angle": 90, 
+   "length": 8,
+   "lineWidth": 10
+}

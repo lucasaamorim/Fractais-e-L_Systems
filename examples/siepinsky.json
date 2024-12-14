@@ -1,0 +1,16 @@
+{
+  "rules": {
+     "X": [
+        "F-G-G"
+     ],
+     "F": [
+        "F-G+F+G-F"
+     ],
+     "G": [
+        "GG"
+     ]
+  },
+  "angle": 120,
+  "length": 8,
+  "lineWidth": 10
+}

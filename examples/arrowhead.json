@@ -1,0 +1,16 @@
+{
+  "rules": {
+     "X": [
+        "bA"
+     ],
+     "A": [
+        "bB-bA-bB"
+     ],
+     "B": [
+      "bA+bB+bA"
+     ]
+  },
+  "angle": 60,
+  "length": 10,
+  "lineWidth": 10
+}
