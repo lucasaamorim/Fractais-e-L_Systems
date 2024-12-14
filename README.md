@@ -34,8 +34,8 @@ O arquivo JSON deve conter os seguintes campos:
 
 - **`rules`**: Um dicionário onde cada símbolo tem uma regra de produção associada.
 - **`angle`**: O ângulo de rotação usado na visualização com a biblioteca `turtle`.
--**`length`**: O comprimento da linha que será desenhada.
--**`lineWidth`**: Espessura da linha.
+- **`length`**: O comprimento da linha que será desenhada.
+- **`lineWidth`**: Comprimento da linha.
 ## Como Usar
 
 1. Clone este repositório:
