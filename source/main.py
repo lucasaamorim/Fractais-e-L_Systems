@@ -14,8 +14,11 @@ if __name__ == "__main__":
         else:
             string = sys.argv[3]
             depth = int(sys.argv[4])
-            print(string, depth)
-            print(recognize_string(depth, axiom, ruledict["rules"], string))
+            if recognize_string(depth, axiom, ruledict["rules"], string):
+                print("String pertence ao L-System")
+                #Talvez seja interessante visualizar o L-System aqui
+            else:
+                print("String nao pertence ao L-System")
     else:
         string = generate_string(ruledict["length"], ruledict["rules"])[0]
         #print(string)
