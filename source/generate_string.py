@@ -1,5 +1,5 @@
 axiom = 'X'
-alphabet = ['r', 'g', 'b', 'n', '1', '2', '+', '-', '/', '\\', 'F', 'X', '[', ']']
+alphabet = ['r', 'g', 'b', 'n', '1', '2', '+', '-', '/', '\\', 'F', 'G', 'A', 'B', 'X', '[', ']']
 
 def read_archive(path) -> dict:
    with open(path, 'r') as file:

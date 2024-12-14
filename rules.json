@@ -4,10 +4,10 @@
          "F"
       ],
       "F": [
-         "F+F−F−F+F"
+         "F+F-F-F+F"
       ]
    },
-   "angle": 90,
-   "length": 3,
+   "angle": 90, 
+   "length": 6,
    "lineWidth": 10
 }

@@ -7,20 +7,16 @@ def create_screen():
     screen.bgcolor("black")
     return screen
 
-def create_turtle():
+def create_turtle(lineWidthBase, angle, string):
     brad = Turtle()
     brad.color("white")
     brad.pensize(1)
     brad.left(90)
     
-    file = read_archive("rules.json")
-    lineWidthBase, angle = file["lineWidth"], file["angle"]
-    string = generate_string(file["length"], file["rules"])[0]
-    
     lineWidth = lineWidthBase
     stack = []
     for char in string:
-        if char == "F":
+        if char in "FGAB":
             brad.forward(lineWidth)
         elif char == "+":
             brad.right(angle)  
