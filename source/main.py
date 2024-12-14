@@ -7,10 +7,15 @@ if __name__ == "__main__":
     file = sys.argv[1]
     ruledict = read_archive(file)
 
-    if len(sys.argv) == 5 and sys.argv[2] == "--verificar":
-        string = sys.argv[3]
-        depth = sys.argv[4]
-        print(recognize_string(depth, axiom, ruledict["rules"], string))
+    if len(sys.argv) >= 3 and sys.argv[2] == "--verificar":
+        if (len(sys.argv) < 5):
+          print("Too Few Arguments for --verificar")
+          exit(1)
+        else:
+            string = sys.argv[3]
+            depth = int(sys.argv[4])
+            print(string, depth)
+            print(recognize_string(depth, axiom, ruledict["rules"], string))
     else:
         string = generate_string(ruledict["length"], ruledict["rules"])[0]
         #print(string)
