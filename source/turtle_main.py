@@ -15,10 +15,12 @@ def draw_l_system(lineWidthBase, angle, string):
     
     screen = turtle.Screen()
     print(len(string))
-    if len(string) >= 1e5: 
-      screen.tracer(10)
-    elif len(string) >= 1e4:
-      screen.tracer(4)
+
+    screen.tracer(1,2)
+    n_moves = 0
+    pow10 = 100
+    pow4 = 64
+    
     brad = create_turtle()
     min_x, min_y = float("inf"), float("inf")
     max_x, max_y = float("-inf"), float("-inf")
@@ -50,7 +52,12 @@ def draw_l_system(lineWidthBase, angle, string):
     for char in string:
         if char in "FGAB":
             brad.forward(lineWidth)
+            n_moves += 1
             update_bounds()
+            if n_moves == pow10:
+                pow10 *= 10
+                pow4 *= 4
+                screen.tracer(pow4,1)
         elif char == "+":
             brad.right(angle)  
         elif char == "-":
