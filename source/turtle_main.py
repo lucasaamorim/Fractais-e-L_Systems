@@ -57,7 +57,7 @@ def draw_l_system(lineWidthBase, angle, string):
             if n_moves == pow10:
                 pow10 *= 10
                 pow4 *= 4
-                screen.tracer(pow4,1)
+                screen.tracer(pow4,0)
         elif char == "+":
             brad.right(angle)  
         elif char == "-":
