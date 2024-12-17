@@ -1,28 +1,28 @@
-import turtle
+import sys
+from generate_string import generate_string, read_archive, axiom
+from recognize_string import recognize_string
+from turtle_main import draw_l_system
 
-'''
-#Base case: currStrin = axiom
-def generate_string(length, currStringList, rules) -> str:
-  if not validate_rules(rules):
-    return None
+if __name__ == "__main__":
+    file = sys.argv[1]
+    ruledict = read_archive(file)
 
-  newString = ""
-  stringList = []
-  for char in string:
-      if char in rules:
-        newString += rules[char]
-      else:
-        newString += char
-  string = newString
-
-  return stringList
-'''
-
-def apply_rules(s):
-  
-    
-def draw(s):
-  for char in s:
-
-
-def main():
+    if len(sys.argv) >= 3 and sys.argv[2] == "--verificar":
+        if (len(sys.argv) < 5):
+          print("Too Few Arguments for --verificar")
+          exit(1)
+        else:
+            string = sys.argv[3]
+            depth = int(sys.argv[4])
+            if recognize_string(depth, axiom, ruledict["rules"], string):
+                print("String pertence ao L-System")
+                #Talvez seja interessante visualizar o L-System aqui
+            else:
+                print("String nao pertence ao L-System")
+    else:
+        string = generate_string(ruledict["length"], ruledict["rules"])[0]
+        #print(string)
+        
+        brad, screen = draw_l_system(ruledict["lineWidth"], ruledict["angle"], string)
+        screen.mainloop()
+        

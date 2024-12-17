@@ -1,0 +1,16 @@
+{
+  "rules": {
+     "X": [
+        "G"
+     ],
+     "F": [
+        "FF"
+     ],
+     "G": [
+        "F+[[G]-G]-F[-FG]+G"
+     ]
+  },
+  "angle": 25,
+  "length": 6,
+  "lineWidth": 10
+}

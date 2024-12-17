@@ -1,0 +1,16 @@
+{
+  "rules": {
+     "X": [
+        "A"
+     ],
+     "A": [
+        "-BF+AFA+FB-"
+     ],
+     "B": [
+      "+AF-BFB-FA+"
+     ]
+  },
+  "angle": 60,
+  "length": 8,
+  "lineWidth": 10
+}
