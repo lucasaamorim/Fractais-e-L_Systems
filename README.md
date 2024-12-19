@@ -45,7 +45,7 @@ O arquivo JSON deve conter os seguintes campos:
 
 2. Execute o programa:
    ```bash
-   python source/main.py caminho/para/arquivo.json profundidade
+   python source/main.py caminho/para/arquivo.json
    ```
 
 3. Para verificar se uma string pertence a um L-System:
@@ -77,7 +77,7 @@ Para um arquivo `rules.json` com o seguinte conteúdo:
 
 Ao executar:
 ```bash
-python main.py rules.json 4
+python main.py rules.json
 ```
 O programa gerará o desenho do fractal correspondente na janela do `turtle`.
 
