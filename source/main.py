@@ -22,7 +22,9 @@ if __name__ == "__main__":
     else:
         string = generate_string(ruledict["length"], ruledict["rules"])[0]
         #print(string)
-        
+        if string == None:
+            print("Invalid rules")
+            exit(1)
         brad, screen = draw_l_system(ruledict["lineWidth"], ruledict["angle"], string)
         screen.mainloop()
         
